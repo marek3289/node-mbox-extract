@@ -30,8 +30,8 @@ function saveMessage(content, subject, contact, index) {
         return;
     }
 
-    const sanitizedSubject = subject.replace(/[<>:"/\\|?*]+/g, ''); // Usunięcie niedozwolonych znaków w nazwach plików
-    const sanitizedContact = contact.replace(/[<>:"/\\|?*]+/g, ''); // Usunięcie niedozwolonych znaków w nazwach plików
+    const sanitizedSubject = subject.replace(/[<>:"/\\|?*]+/g, '');
+    const sanitizedContact = contact.replace(/[<>:"/\\|?*]+/g, '');
     const fileName = `${sanitizedContact}_message_${index}_${sanitizedSubject || 'no_subject'}.txt`;
     const filePath = path.join(messagesDir, fileName);
     fs.writeFileSync(filePath, content, 'utf8');
@@ -41,7 +41,6 @@ function saveMessage(content, subject, contact, index) {
 function processHeaders(headers) {
     const allAddresses = new Set();
     
-    // Odczyt adresów z nagłówka 'To'
     const toAddresses = headers.get('to');
     if (toAddresses && Array.isArray(toAddresses.value)) {
         toAddresses.value.forEach(addressObj => {
@@ -82,7 +81,7 @@ mbox.on('message', function(msg) {
     mailparser.on('data', data => {
         if (data.type === 'text') {
             const addresses = processHeaders(mailparser.headers || {});
-            const contact = addresses[0] || 'no_contact'; // Wybierz pierwszy adres lub 'no_contact'
+            const contact = addresses[0] || 'no_contact';
             saveMessage(data.text, subject, contact, messageCounter++);
         }
     });
