@@ -4,12 +4,6 @@ mbox file parser for Node.js.
 
 ### Install
 
-From the NPM repository:
-
-```
-$ npm install node-mbox
-```
-
 From the Github repository:
 
 ```
