@@ -1,0 +1,39 @@
+{
+  "name": "node-mbox",
+  "version": "1.0.0",
+  "description": "mbox parser for Node",
+  "scripts": {
+    "test": "mocha -R spec test/"
+  },
+  "author": {
+    "name": "marek3289"
+  },
+  "keywords": [
+    "e-mail",
+    "mbox"
+  ],
+  "main": "./src/mbox.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/robertklep/node-mbox.git"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^3.5.3",
+    "through2": "^2.0.3"
+  },
+  "dependencies": {
+    "date-fns": "^3.6.0",
+    "isstream": "^0.1.2",
+    "line-stream": "^1.0.0",
+    "mailparser": "^3.7.1",
+    "node-mbox": "^2.0.0",
+    "nodemailer": "^6.9.14",
+    "string-to-stream": "^1.1.0"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "packageManager": "yarn@4.1.1+sha256.f3cc0eda8e5560e529c7147565b30faa43b4e472d90e8634d7134a37c7f59781"
+}
